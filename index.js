@@ -1,24 +1,8 @@
-// GIVEN a command-line application that accepts user input
-// WHEN I am prompted for information about my application repository
-// THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-// WHEN I enter my project title
-// THEN this is displayed as the title of the README
-// WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-// THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-// WHEN I enter my GitHub username
-// THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-// WHEN I enter my email address
-// THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-// WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of the README
-
-// TODO: Include packages needed for this application
+// Required dependencies
 const inquirer = require('./node_modules/inquirer');
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
+// Array of questions to generate ReadMe
 const questions = [
 	{
 		type: 'input',
@@ -68,7 +52,7 @@ const questions = [
 	},
 ];
 
-// Generate badge
+// Generates a badge for specific license selected
 function generateBadge(license) {
 	switch (license) {
 		case 'MIT':
@@ -85,7 +69,7 @@ function generateBadge(license) {
 	}
 }
 
-// Generate license text
+// Generate license text for specific license
 function generateLicenseText(license) {
 	switch (license) {
 		case 'MIT':
@@ -95,21 +79,21 @@ function generateLicenseText(license) {
 			return 'Licensed under the [GNU license](https://www.gnu.org/licenses/gpl-3.0)';
 
 		case 'CC0':
-			return 'Licensed under the  [CC0 license](http://creativecommons.org/publicdomain/zero/1.0/)';
+			return 'Licensed under the [CC0 license](http://creativecommons.org/publicdomain/zero/1.0/)';
 
 		case 'BSD':
 			return 'Licensed under the [BSD license](https://opensource.org/licenses/BSD-3-Clause)';
 	}
 }
 
-// TODO: Create a function to write README file
+// Writes the readme file and displays success, or shows error
 function writeToFile(fileName, data) {
 	fs.writeFile(fileName, data, (err) =>
 		err ? console.error(err) : console.log('Success! New ReadMe generated in current folder.')
 	);
 }
 
-// TODO: Create a function to initialize app
+// Initializes the app when run in the command line and produces the content of the ReadMe
 function init() {
 	inquirer.prompt(questions).then((response) => {
 		console.log(response);
@@ -121,13 +105,13 @@ ${generateBadge(response.license)}
 ${response.description}
 
 ## Table of Contents
-- [Project Description](##Description)
-- [Installation](##Installation)
-- [Usage](##Usage)
-- [License](##License)
-- [Contributing](##Contributing)
-- [Test](##Tests)
-- [Questions](##Questions)
+- [Project Description](#Description)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
+- [Contributing](#Contributing)
+- [Test](#Tests)
+- [Questions](#Questions)
 
 ## Installation
 ${response.installation}
