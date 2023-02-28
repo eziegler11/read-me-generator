@@ -54,7 +54,7 @@ const questions = [
 		type: 'list',
 		message: 'Which license do you want to use?',
 		name: 'license',
-		choices: ['MIT', 'GNU'],
+		choices: ['MIT', 'GNU', 'CC0', 'BSD'],
 	},
 	{
 		type: 'input',
@@ -65,7 +65,7 @@ const questions = [
 		type: 'input',
 		message: 'What is your email address?',
 		name: 'email',
-	}
+	},
 ];
 
 // Generate badge
@@ -89,23 +89,23 @@ function generateBadge(license) {
 function generateLicenseText(license) {
 	switch (license) {
 		case 'MIT':
-			return 'Go here to [Read More on MIT license](https://opensource.org/licenses/MIT)';
+			return 'Licensed under the [MIT license](https://opensource.org/licenses/MIT)';
 
 		case 'GNU':
-			return 'Go here to [Read More on GNU license](https://www.gnu.org/licenses/gpl-3.0)';
+			return 'Licensed under the [GNU license](https://www.gnu.org/licenses/gpl-3.0)';
 
 		case 'CC0':
-			return 'Go here to [Read More on CC0 license](http://creativecommons.org/publicdomain/zero/1.0/)';
+			return 'Licensed under the  [CC0 license](http://creativecommons.org/publicdomain/zero/1.0/)';
 
 		case 'BSD':
-			return 'Go here to [Read More on the BSD license](https://opensource.org/licenses/BSD-3-Clause)';
+			return 'Licensed under the [BSD license](https://opensource.org/licenses/BSD-3-Clause)';
 	}
 }
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 	fs.writeFile(fileName, data, (err) =>
-		err ? console.error(err) : console.log('Success!')
+		err ? console.error(err) : console.log('Success! New ReadMe generated in current folder.')
 	);
 }
 
@@ -113,14 +113,21 @@ function writeToFile(fileName, data) {
 function init() {
 	inquirer.prompt(questions).then((response) => {
 		console.log(response);
-		const markdown = `${generateBadge(response.license)}
+		const markdown = `# ${response.title}
 
-# ${response.title}
+${generateBadge(response.license)}
 
 ## Description
 ${response.description}
 
 ## Table of Contents
+- [Project Description](##Description)
+- [Installation](##Installation)
+- [Usage](##Usage)
+- [License](##License)
+- [Contributing](##Contributing)
+- [Test](##Tests)
+- [Questions](##Questions)
 
 ## Installation
 ${response.installation}
