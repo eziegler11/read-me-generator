@@ -132,7 +132,7 @@ ${response.test}
 http://github.com/${response.github}\n
 Please reach out to me at ${response.email} with any questions.`;
 
-		writeToFile('readme.md', markdown);
+		writeToFile('sample_readme.md', markdown);
 	});
 }
 

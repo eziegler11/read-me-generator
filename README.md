@@ -1,35 +1,34 @@
-# World of Warcraft
-
-[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
+# Professional ReadMe Generator
 
 ## Description
-Calm and deep Chillstep and Future Garage Mix will improve your productivity for work or study. This radio is made to bring you the most effective music to make the things done in less time. You can listen to it while programming, web designing, coding, studying or even hacking. Enjoy the Focus Music Mix with Music Lab channel.
 
-## Table of Contents
-- [Project Description](#Description)
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [License](#License)
-- [Contributing](#Contributing)
-- [Test](#Tests)
-- [Questions](#Questions)
+I was motivated to create this project as an easier way to generate a ReadMe without leaving your coding platform. I built this because I wanted an integrated and interactive way to generate a ReadMe by using prompts. It solves the problem of not having to remember the required headings in a ReadMe and instead populates that information for you based on your answers. I learned more about Node JS and how to write a file to my local machine. But even more so, how to create multiple prompts and use the answers from those prompts to populate information within a file.
 
 ## Installation
-This channel is dedicated to bringing you the most relaxing and peaceful music in the world. With a mix of ambient, new age, electronic, and space music, we strive to offer you the best selection of media for your relaxation and enjoyment.
+
+The steps to install my project are as follows:
+- Clone or fork my code from GitHub
+- Install the required dependencies (Inquirer)
+- Run the file from the command line using "node index.js"
 
 ## Usage
-If you enjoyed this video like, comment or subscribe to the channel. 🙏
+
+Here is a link to a video of the file running.
+
+https://drive.google.com/file/d/1GYZhZX4uvr4rIK5SAmon9guoYkmz-c2Z/view
+
+Here is an example of the file running within the terminal to generate the ReadMe.
+
+    ![Project running in integrated terminal to generate ReadMe(/assets/images/screenshot.png)
 
 ## License
-Licensed under the [CC0 license](http://creativecommons.org/publicdomain/zero/1.0/)
 
-## Contributing
-Calm and deep Chillstep and Future Garage Mix will improve your productivity for work or study. This radio is made to bring you the most effective music to make the things done in less time. You can listen to it while programming, web designing, coding, studying or even hacking. Enjoy the Focus Music Mix with Music Lab channel.
+MIT License
 
-## Tests
-If you enjoyed this video like, comment or subscribe to the channel. 🙏
+Copyright (c) 2023 Erich Z.
 
-## Questions
-http://github.com/testtesttest
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-Please reach out to me at test@test.com with any questions.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
