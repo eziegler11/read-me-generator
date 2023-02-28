@@ -30,47 +30,42 @@ const questions = [
 		message: 'What is your project about?',
 		name: 'description',
 	},
-	//   {
-	//     type: 'input',
-	//     message: 'How does a user install your code?',
-	//     name: 'installation',
-	//   },
-	//   {
-	//       type: 'input',
-	//       message: 'How does a user run your code?',
-	//       name: 'usage',
-	//   },
-	//   {
-	//       type: 'input',
-	//       message: 'How can a user contribute to your code?',
-	//       name: 'contribute',
-	//   },
-	//   {
-	//     type: 'input',
-	//     message: 'How can a user test your code?',
-	//     name: 'test',
-	// },
-	// {
-	//     type: 'input',
-	//     message: 'How can a user contribute to your code?',
-	//     name: 'contribute',
-	// },
 	{
-		type: 'list', // this needs changed
+		type: 'input',
+		message: 'How does a user install your code?',
+		name: 'installation',
+	},
+	{
+		type: 'input',
+		message: 'How does a user run your code?',
+		name: 'usage',
+	},
+	{
+		type: 'input',
+		message: 'How can a user contribute to your code?',
+		name: 'contribute',
+	},
+	{
+		type: 'input',
+		message: 'How can a user test your code?',
+		name: 'test',
+	},
+	{
+		type: 'list',
 		message: 'Which license do you want to use?',
 		name: 'license',
 		choices: ['MIT', 'GNU'],
 	},
-	// {
-	//     type: 'input',
-	//     message: 'What is your GitHub username?',
-	//     name: 'github',
-	// },
-	// {
-	//     type: 'input',
-	//     message: 'How can a user contribute to your code?',
-	//     name: 'contribute',
-	// },
+	{
+		type: 'input',
+		message: 'What is your GitHub username?',
+		name: 'github',
+	},
+	{
+		type: 'input',
+		message: 'What is your email address?',
+		name: 'email',
+	}
 ];
 
 // Generate badge
@@ -81,6 +76,12 @@ function generateBadge(license) {
 
 		case 'GNU':
 			return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+
+		case 'CC0':
+			return '[![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)';
+
+		case 'BSD':
+			return '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)';
 	}
 }
 
@@ -92,14 +93,20 @@ function generateLicenseText(license) {
 
 		case 'GNU':
 			return 'Go here to [Read More on GNU license](https://www.gnu.org/licenses/gpl-3.0)';
+
+		case 'CC0':
+			return 'Go here to [Read More on CC0 license](http://creativecommons.org/publicdomain/zero/1.0/)';
+
+		case 'BSD':
+			return 'Go here to [Read More on the BSD license](https://opensource.org/licenses/BSD-3-Clause)';
 	}
-} // Add more licenses: Creative Commons, BSD
+}
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) =>
-    err ? console.error(err) : console.log('Success!')
-);
+	fs.writeFile(fileName, data, (err) =>
+		err ? console.error(err) : console.log('Success!')
+	);
 }
 
 // TODO: Create a function to initialize app
@@ -110,12 +117,31 @@ function init() {
 
 # ${response.title}
 
+## Description
 ${response.description}
 
+## Table of Contents
+
+## Installation
+${response.installation}
+
+## Usage
+${response.usage}
+
 ## License
-${generateLicenseText(response.license)}    
-    `;
-        writeToFile ("readme.md", markdown);
+${generateLicenseText(response.license)}
+
+## Contributing
+${response.contribute}
+
+## Tests
+${response.test}
+
+## Questions
+http://github.com/${response.github}\n
+Please reach out to me at ${response.email} with any questions.`;
+
+		writeToFile('readme.md', markdown);
 	});
 }
 
