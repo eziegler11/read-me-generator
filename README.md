@@ -20,7 +20,7 @@ Here is a link to a video of the file running:
 
 Here is an example of the file running within the terminal to generate the ReadMe.
 
-![Project running within the terminal](../read-me-generator/assets/images/app_screenshot.png)
+![Project running within the terminal](/read-me-generator/develop/assets/images/app_screenshot.png)
 
 ## License
 
