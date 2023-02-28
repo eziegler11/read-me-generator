@@ -7,19 +7,20 @@ I was motivated to create this project as an easier way to generate a ReadMe wit
 ## Installation
 
 The steps to install my project are as follows:
+
 - Clone or fork my code from GitHub
 - Install the required dependencies (Inquirer)
 - Run the file from the command line using "node index.js"
 
 ## Usage
 
-Here is a link to a video of the file running.
+Here is a link to a video of the file running:
 
-https://drive.google.com/file/d/1GYZhZX4uvr4rIK5SAmon9guoYkmz-c2Z/view
+[Video Link](https://drive.google.com/file/d/1GYZhZX4uvr4rIK5SAmon9guoYkmz-c2Z/view)
 
 Here is an example of the file running within the terminal to generate the ReadMe.
 
-    ![Project running in integrated terminal to generate ReadMe(/assets/images/screenshot.png)
+![Project running within the terminal](../read-me-generator/assets/images/app_screenshot.png)
 
 ## License
 
