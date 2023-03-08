@@ -89,7 +89,9 @@ function generateLicenseText(license) {
 // Writes the readme file and displays success, or shows error
 function writeToFile(fileName, data) {
 	fs.writeFile(fileName, data, (err) =>
-		err ? console.error(err) : console.log('Success! New ReadMe generated in current folder.')
+		err
+			? console.error(err)
+			: console.log('Success! New ReadMe generated in current folder.')
 	);
 }
 
@@ -105,7 +107,7 @@ ${generateBadge(response.license)}
 ${response.description}
 
 ## Table of Contents
-- [Project Description](#Description)
+- [Description](#Description)
 - [Installation](#Installation)
 - [Usage](#Usage)
 - [License](#License)
